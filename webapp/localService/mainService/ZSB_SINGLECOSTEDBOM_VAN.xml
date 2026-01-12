@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zsb_singlecostedbom/$metadata">
+        <edmx:Include Namespace="ZSB_SINGLECOSTEDBOM" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zsb_singlecostedbom_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zsd_singlecostedbom.ZCE_SingleCostedBOMType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Single Level Costed"/>
+                            <PropertyValue Property="ID" String="idinformation"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Single Level Costed"/>
+                        <PropertyValue Property="TypeNamePlural" String="Single Level Costed"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Material"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Item Number"/>
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Plant"/>
+                            <PropertyValue Property="Value" Path="Plant"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Parent_Desc"/>
+                            <PropertyValue Property="Value" Path="product_Desc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CPN_I"/>
+                            <PropertyValue Property="Value" Path="cmpnt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Component Desc"/>
+                            <PropertyValue Property="Value" Path="cmpnt_desc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BOMSEQ_I"/>
+                            <PropertyValue Property="Value" Path="BOMSEQ_I"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="itemtype"/>
+                            <PropertyValue Property="Value" Path="itemtype"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Class ID"/>
+                            <PropertyValue Property="Value" Path="ClassID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Parent Signal Code"/>
+                            <PropertyValue Property="Value" Path="ParentSignalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ComponentSignalCode"/>
+                            <PropertyValue Property="Value" Path="ComponentSignalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Landed_Cost_Group_ID"/>
+                            <PropertyValue Property="Value" Path="Landed_Cost_Group_ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Royalty"/>
+                            <PropertyValue Property="Value" Path="Royalty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Royalty Amount"/>
+                            <PropertyValue Property="Value" Path="RoyaltyAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Freight"/>
+                            <PropertyValue Property="Value" Path="Freight"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Freight Cost"/>
+                            <PropertyValue Property="Value" Path="Freight_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Quantity"/>
+                            <PropertyValue Property="Value" Path="Quantity"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchaseCost"/>
+                            <PropertyValue Property="Value" Path="PurchaseCost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="STNDCOST"/>
+                            <PropertyValue Property="Value" Path="STNDCOST"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="MATCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="MATCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor_Cost"/>
+                            <PropertyValue Property="Value" Path="Labor_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LABFIXOHDCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="LABFIXOHDCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TOTALCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="TOTALCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Total_Extended_Cost"/>
+                            <PropertyValue Property="Value" Path="Total_Extended_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Originating_Invoice_Cost1"/>
+                            <PropertyValue Property="Value" Path="Originating_Invoice_Cost1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="staticpurchaseprice1"/>
+                            <PropertyValue Property="Value" Path="staticpurchaseprice1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="MakeBuy"/>
+                            <PropertyValue Property="Value" Path="MakeBuy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="engg_qty"/>
+                            <PropertyValue Property="Value" Path="engg_qty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchasingUofM"/>
+                            <PropertyValue Property="Value" Path="PurchasingUofM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="QtyinBaseUofM"/>
+                            <PropertyValue Property="Value" Path="QtyinBaseUofM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BaseUnitofMeasure"/>
+                            <PropertyValue Property="Value" Path="BaseUnitofMeasure"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RUNTIME"/>
+                            <PropertyValue Property="Value" Path="RUNTIME"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CYCLETIME"/>
+                            <PropertyValue Property="Value" Path="CYCLETIME"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor Code"/>
+                            <PropertyValue Property="Value" Path="Labor_Code"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor Rate"/>
+                            <PropertyValue Property="Value" Path="Labor_Rate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Fixed Overheard"/>
+                            <PropertyValue Property="Value" Path="Fixed_Overheard"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Calculation Method"/>
+                            <PropertyValue Property="Value" Path="CalculationMethod"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Amount or Percentage"/>
+                            <PropertyValue Property="Value" Path="Amount_or_Percentage"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Revision Level"/>
+                            <PropertyValue Property="Value" Path="RevisionLevel"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Item Number"/>
+                            <PropertyValue Property="Value" Path="Material"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Plant"/>
+                            <PropertyValue Property="Value" Path="Plant"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Parent_Desc"/>
+                            <PropertyValue Property="Value" Path="product_Desc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CPN_I"/>
+                            <PropertyValue Property="Value" Path="cmpnt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Component Desc"/>
+                            <PropertyValue Property="Value" Path="cmpnt_desc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BOMSEQ_I"/>
+                            <PropertyValue Property="Value" Path="BOMSEQ_I"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="itemtype"/>
+                            <PropertyValue Property="Value" Path="itemtype"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Class ID"/>
+                            <PropertyValue Property="Value" Path="ClassID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Parent Signal Code"/>
+                            <PropertyValue Property="Value" Path="ParentSignalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ComponentSignalCode"/>
+                            <PropertyValue Property="Value" Path="ComponentSignalCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Landed_Cost_Group_ID"/>
+                            <PropertyValue Property="Value" Path="Landed_Cost_Group_ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Royalty"/>
+                            <PropertyValue Property="Value" Path="Royalty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Royalty Amount"/>
+                            <PropertyValue Property="Value" Path="RoyaltyAmount"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Freight"/>
+                            <PropertyValue Property="Value" Path="Freight"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Freight Cost"/>
+                            <PropertyValue Property="Value" Path="Freight_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Quantity"/>
+                            <PropertyValue Property="Value" Path="Quantity"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchaseCost"/>
+                            <PropertyValue Property="Value" Path="PurchaseCost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="STNDCOST"/>
+                            <PropertyValue Property="Value" Path="STNDCOST"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="MATCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="MATCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor_Cost"/>
+                            <PropertyValue Property="Value" Path="Labor_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="LABFIXOHDCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="LABFIXOHDCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="TOTALCOSTI_1"/>
+                            <PropertyValue Property="Value" Path="TOTALCOSTI_1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Total_Extended_Cost"/>
+                            <PropertyValue Property="Value" Path="Total_Extended_Cost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Originating_Invoice_Cost1"/>
+                            <PropertyValue Property="Value" Path="Originating_Invoice_Cost1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="staticpurchaseprice1"/>
+                            <PropertyValue Property="Value" Path="staticpurchaseprice1"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="MakeBuy"/>
+                            <PropertyValue Property="Value" Path="MakeBuy"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="engg_qty"/>
+                            <PropertyValue Property="Value" Path="engg_qty"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PurchasingUofM"/>
+                            <PropertyValue Property="Value" Path="PurchasingUofM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="QtyinBaseUofM"/>
+                            <PropertyValue Property="Value" Path="QtyinBaseUofM"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BaseUnitofMeasure"/>
+                            <PropertyValue Property="Value" Path="BaseUnitofMeasure"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="RUNTIME"/>
+                            <PropertyValue Property="Value" Path="RUNTIME"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="CYCLETIME"/>
+                            <PropertyValue Property="Value" Path="CYCLETIME"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor Code"/>
+                            <PropertyValue Property="Value" Path="Labor_Code"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Labor Rate"/>
+                            <PropertyValue Property="Value" Path="Labor_Rate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Fixed Overheard"/>
+                            <PropertyValue Property="Value" Path="Fixed_Overheard"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Calculation Method"/>
+                            <PropertyValue Property="Value" Path="CalculationMethod"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Amount or Percentage"/>
+                            <PropertyValue Property="Value" Path="Amount_or_Percentage"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Revision Level"/>
+                            <PropertyValue Property="Value" Path="RevisionLevel"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Material</PropertyPath>
+                        <PropertyPath>Plant</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="_Entities"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
